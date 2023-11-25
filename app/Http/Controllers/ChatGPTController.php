@@ -21,6 +21,11 @@ class ChatGPTController extends Controller
         ]);
     }
 
+    public function chatBasePaga()
+    {
+        return view("chat");
+    }
+
     public function askToChatGpt()
     {
         $message = "what is laravel";

@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view("welcome");
 });
 
-Route::get('/chat', [App\Http\Controllers\ChatGPTController::class, 'askToChatGpt']);
+Route::get('/chat', function () { return view('chat');
+});
+Route::get('/askGPT', [App\Http\Controllers\ChatGPTController::class, 'askToChatGpt']);

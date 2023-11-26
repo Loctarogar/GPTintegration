@@ -25,9 +25,20 @@
             <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#about">SIGN UP</a></li>
-            </ul>
+            @if (Route::has('login'))
+                <ul class="navbar-nav ms-auto">
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                    @else
+                        <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">LOGIN</a></li>
+
+                        @if (Route::has('register'))
+                            <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">REGISTER</a></li>
+                        @endif
+                    @endauth
+                </ul>
+            @endif
+
         </div>
     </div>
 </nav>
@@ -38,7 +49,7 @@
             <div class="text-center">
                 <h1 class="mx-auto my-0 text-uppercase">WELCOME</h1>
                 <h2 class="text-white-50 mx-auto mt-2 mb-5">Easy and responsive design for CHATGpt</h2>
-                <a class="btn btn-primary" href="#signup">LOG IN</a>
+                <a class="btn btn-primary" href="#signup">START</a>
             </div>
         </div>
     </div>

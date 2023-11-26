@@ -21,7 +21,7 @@ class ChatGPTController extends Controller
         ]);
     }
 
-    public function chatBasePage()
+    public function chatBasePage(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         return view("chat");
     }

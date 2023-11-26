@@ -23,7 +23,8 @@
 	<div id="sidepanel">
 		<div id="profile">
 			<div class="wrap">
-				<img id="profile-img" src="http://emilcarlsson.se/assets/mikeross.png" class="online" alt="" />
+{{--				<img id="profile-img" src="http://emilcarlsson.se/assets/mikeross.png" class="online" alt="" />--}}
+                <img src="{{ URL::asset('/assets/img/chat/chatgpt.png') }}" alt="">
 				<p>WELCOME TO CHATGpt</p>
 			</div>
 		</div>
@@ -39,7 +40,7 @@
 	<div class="content">
 		<div class="contact-profile">
 			<img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
-			<p>Your login</p>
+			<p>{{Auth::user()->name}}</p>
 		</div>
 		<div class="messages">
 			<ul>

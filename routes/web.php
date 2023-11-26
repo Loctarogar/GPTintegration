@@ -18,11 +18,11 @@ Route::get('/', function () {
     return view('myWelcome');
 });
 
-Route::get('/chat', [\App\Http\Controllers\ChatGPTController::class, 'chatBasePage'])->name('chat');
-
 //Route::get('/', function () {
 //    return view('baseWelcome');
 //});
+
+Route::get('/chat', [\App\Http\Controllers\ChatGPTController::class, 'chatBasePage'])->name('chat');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -28,7 +28,8 @@
             @if (Route::has('login'))
                 <ul class="navbar-nav ms-auto">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+{{--                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>--}}
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard') }}">DASHBOARD</a></li>
                     @else
                         <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">LOGIN</a></li>
 
@@ -49,7 +50,9 @@
             <div class="text-center">
                 <h1 class="mx-auto my-0 text-uppercase">WELCOME</h1>
                 <h2 class="text-white-50 mx-auto mt-2 mb-5">Easy and responsive design for CHATGpt</h2>
-                <a class="btn btn-primary" href="#signup">START</a>
+                @auth
+                <a class="btn btn-primary" href="{{ route('chat') }}">START</a>
+                @endauth
             </div>
         </div>
     </div>

@@ -21,7 +21,7 @@ class ChatGPTController extends Controller
         ]);
     }
 
-    public function chatBasePaga()
+    public function chatBasePage()
     {
         return view("chat");
     }

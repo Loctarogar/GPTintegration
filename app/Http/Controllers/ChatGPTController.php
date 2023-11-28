@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Question;
 use GuzzleHttp\Client;
+use GuzzleHttp\Middleware;
+use Illuminate\Database\Migrations\Migration;
 use Illuminate\Http\Request;
 
 class ChatGPTController extends Controller
@@ -24,7 +27,9 @@ class ChatGPTController extends Controller
      */
     public function index()
     {
-        //
+        $questions = Question::all();
+
+        return $questions;
     }
 
     /**
